@@ -1,0 +1,409 @@
+[
+  {
+    "id": "AN-001",
+    "name": "คอนโดหรู พระราม 9 วิวเมือง ห้องมุม",
+    "deal": "sale",
+    "ptype": "คอนโด",
+    "price": 7990000,
+    "province": "กรุงเทพมหานคร",
+    "district": "พระราม 9",
+    "location": "MRT พระราม 9",
+    "beds": 2,
+    "baths": 2,
+    "parking": 1,
+    "size": 58,
+    "floor": "ชั้น 25/35",
+    "lat": 13.7576,
+    "lng": 100.5651,
+    "transit": [
+      "MRT น้ำเงิน"
+    ],
+    "features": [
+      "เฟอร์ครบ",
+      "ห้องมุม",
+      "ใกล้ห้าง",
+      "ฟิตเนส",
+      "สระว่ายน้ำ"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691723518-36a5ac3b2cb9?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154154-1e4be48db078?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-002",
+    "name": "คอนโด อโศก-ทองหล่อ แต่งครบ ใกล้ BTS",
+    "deal": "rent",
+    "ptype": "คอนโด",
+    "price": 35000,
+    "province": "กรุงเทพมหานคร",
+    "district": "อโศก-ทองหล่อ",
+    "location": "BTS อโศก",
+    "beds": 1,
+    "baths": 1,
+    "parking": 1,
+    "size": 34,
+    "floor": "ชั้น 21/30",
+    "lat": 13.7366,
+    "lng": 100.561,
+    "transit": [
+      "BTS สุขุมวิท"
+    ],
+    "features": [
+      "เฟอร์ครบ",
+      "เครื่องซักผ้า",
+      "ใกล้มหาวิทยาลัย"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-003",
+    "name": "ทาวน์โฮม รัชดา-ห้วยขวาง 3 ชั้น จอด 2",
+    "deal": "sale",
+    "ptype": "ทาวน์โฮม",
+    "price": 9200000,
+    "province": "กรุงเทพมหานคร",
+    "district": "รัชดา-ห้วยขวาง",
+    "location": "ซอยประชาราษฎร์บำเพ็ญ",
+    "beds": 3,
+    "baths": 3,
+    "parking": 2,
+    "size": 168,
+    "lat": 13.7768,
+    "lng": 100.5725,
+    "features": [
+      "ใกล้โรงพยาบาล",
+      "ทำโฮมออฟฟิศได้"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7cde8?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560185008-b033106af2d0?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-004",
+    "name": "พูลวิลล่า ป่าตอง ภูเก็ต ใกล้ทะเล",
+    "deal": "rent",
+    "ptype": "วิลล่า",
+    "price": 180000,
+    "province": "ภูเก็ต",
+    "district": "ป่าตอง",
+    "location": "หาดป่าตอง",
+    "beds": 4,
+    "baths": 4,
+    "parking": 2,
+    "size": 320,
+    "lat": 7.8966,
+    "lng": 98.2965,
+    "features": [
+      "สระว่ายน้ำส่วนตัว",
+      "เลี้ยงสัตว์ได้",
+      "ใกล้ทะเล"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154154-1e4be48db078?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560185008-b033106af2d0?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-005",
+    "name": "โฮมออฟฟิศ เกษตร-นวมินทร์ 4 ชั้น",
+    "deal": "sale",
+    "ptype": "โฮมออฟฟิศ",
+    "price": 14500000,
+    "province": "กรุงเทพมหานคร",
+    "district": "เกษตร-นวมินทร์",
+    "location": "ใกล้ The Walk",
+    "beds": 4,
+    "baths": 5,
+    "parking": 3,
+    "size": 280,
+    "lat": 13.8525,
+    "lng": 100.6415,
+    "features": [
+      "จอดรถ 3 คัน",
+      "ใกล้โรงเรียน"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1507209696998-3c532be9b2b4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1507209696998-3c532be9b2b4?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-006",
+    "name": "บ้านเดี่ยว เชียงใหม่ สันทราย วิวเขา",
+    "deal": "sale",
+    "ptype": "บ้านเดี่ยว",
+    "price": 7800000,
+    "province": "เชียงใหม่",
+    "district": "สันทราย",
+    "location": "เชียงใหม่",
+    "beds": 3,
+    "baths": 3,
+    "parking": 2,
+    "size": 220,
+    "lat": 18.7883,
+    "lng": 98.9853,
+    "features": [
+      "สนามหญ้า",
+      "ใกล้มหาวิทยาลัย"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1560184897-ae75f418493e?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691723518-36a5ac3b2cb9?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1560184897-ae75f418493e?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-007",
+    "name": "ที่ดิน นาเกลือ-วงศอมาตย์ ใกล้ทะเล",
+    "deal": "sale",
+    "ptype": "ที่ดิน",
+    "price": 19000000,
+    "province": "ชลบุรี",
+    "district": "นาเกลือ/วงศอมาตย์",
+    "location": "พัทยาเหนือ",
+    "size": 220,
+    "lat": 12.957,
+    "lng": 100.889,
+    "features": [
+      "ใกล้ทะเล"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560185008-b033106af2d0?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691723518-36a5ac3b2cb9?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-008",
+    "name": "คอนโด สาทร ใกล้ BTS ช่องนนทรี",
+    "deal": "sale",
+    "ptype": "คอนโด",
+    "price": 11500000,
+    "province": "กรุงเทพมหานคร",
+    "district": "สาทร",
+    "location": "BTS ช่องนนทรี",
+    "beds": 2,
+    "baths": 2,
+    "parking": 1,
+    "size": 70,
+    "lat": 13.723,
+    "lng": 100.528,
+    "transit": [
+      "BTS สีลม"
+    ],
+    "features": [
+      "ใกล้โรงพยาบาล",
+      "ใกล้สวน"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1560448075-bb4caa6c505a?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7cde8?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1560448075-bb4caa6c505a?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-009",
+    "name": "คอนโด บางนา-ตราด กม.10 (เฟอร์ครบ)",
+    "deal": "rent",
+    "ptype": "คอนโด",
+    "price": 22000,
+    "province": "สมุทรปราการ",
+    "district": "บางพลี",
+    "location": "บางนา-ตราด กม.10",
+    "beds": 1,
+    "baths": 1,
+    "parking": 1,
+    "size": 30,
+    "lat": 13.6126,
+    "lng": 100.7417,
+    "features": [
+      "เฟอร์ครบ",
+      "ใกล้ห้าง"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1498307833015-e7b400441eb8?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7cde8?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560185008-b033106af2d0?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1498307833015-e7b400441eb8?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-010",
+    "name": "โรงแรมบูทีค นิมมานฯ รายได้ดี",
+    "deal": "sale",
+    "ptype": "โรงแรม/เกสต์เฮาส์",
+    "price": 45000000,
+    "province": "เชียงใหม่",
+    "district": "นิมมานฯ",
+    "location": "ถ.นิมมานเหมินท์",
+    "beds": 12,
+    "baths": 12,
+    "parking": 4,
+    "size": 900,
+    "lat": 18.7965,
+    "lng": 98.967,
+    "features": [
+      "ใกล้มหาวิทยาลัย",
+      "เหมาะลงทุน"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560185008-b033106af2d0?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1280&auto=format&fit=crop"
+    ],
+    "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1280&auto=format&fit=crop"
+  },
+  {
+    "id": "AN-011",
+    "name": "ออฟฟิศให้เช่า สาทร วิวเมือง ชั้นสูง",
+    "deal": "rent",
+    "ptype": "ออฟฟิศ",
+    "price": 120000,
+    "province": "กรุงเทพมหานคร",
+    "district": "สาทร",
+    "location": "BTS ช่องนนทรี",
+    "beds": 0,
+    "baths": 2,
+    "parking": 2,
+    "size": 180,
+    "lat": 13.7235,
+    "lng": 100.5287,
+    "transit": [
+      "BTS สีลม"
+    ],
+    "features": [
+      "Fully Fitted",
+      "Near BNH Hospital"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7cde8?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691723518-36a5ac3b2cb9?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1280&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": "AN-012",
+    "name": "บ้านแฝด บางนา-ตราด ใกล้ MEGA Bangna",
+    "deal": "sale",
+    "ptype": "บ้านแฝด",
+    "price": 6800000,
+    "province": "สมุทรปราการ",
+    "district": "บางพลี",
+    "location": "ซ.บางนา-ตราด 19",
+    "beds": 3,
+    "baths": 3,
+    "parking": 2,
+    "size": 170,
+    "lat": 13.645,
+    "lng": 100.678,
+    "features": [
+      "ใกล้ห้าง",
+      "คลับเฮาส์"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560185008-b033106af2d0?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154154-1e4be48db078?q=80&w=1280&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": "AN-013",
+    "name": "โกดัง/โรงงาน ชลบุรี ใกล้มอเตอร์เวย์",
+    "deal": "sale",
+    "ptype": "โกดัง/โรงงาน",
+    "price": 23500000,
+    "province": "ชลบุรี",
+    "district": "ศรีราชา",
+    "location": "ใกล้ท่าเรือแหลมฉบัง",
+    "beds": 0,
+    "baths": 2,
+    "parking": 10,
+    "size": 1200,
+    "lat": 13.0875,
+    "lng": 100.915,
+    "features": [
+      "ไฟฟ้า 3 เฟส",
+      "รถเทรลเลอร์เข้าได้"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7cde8?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691723518-36a5ac3b2cb9?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1280&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": "AN-014",
+    "name": "ทาวน์โฮม พระราม 9-รามคำแหง รีโนเวตใหม่",
+    "deal": "rent",
+    "ptype": "ทาวน์โฮม",
+    "price": 28000,
+    "province": "กรุงเทพมหานคร",
+    "district": "พระราม 9",
+    "location": "ซ.พระราม9 55",
+    "beds": 3,
+    "baths": 2,
+    "parking": 1,
+    "size": 140,
+    "lat": 13.742,
+    "lng": 100.612,
+    "features": [
+      "เลี้ยงสัตว์ได้",
+      "ใกล้ห้าง"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1560185008-b033106af2d0?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154154-1e4be48db078?q=80&w=1280&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7cde8?q=80&w=1280&auto=format&fit=crop"
+    ]
+  }
+]

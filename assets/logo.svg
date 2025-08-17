@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 68'>
+<defs><linearGradient id='g' x1='0' x2='1'>
+  <stop offset='0' stop-color='#F5D67A'/>
+  <stop offset='1' stop-color='#C6A347'/>
+</linearGradient></defs>
+<rect rx='16' width='240' height='68' fill='url(#g)'/>
+<text x='20' y='43' fill='#0B1220' font-size='30' font-family='Playfair Display,Georgia,serif' font-weight='700'>Crown</text>
+<text x='120' y='43' fill='#0B1220' font-size='30' font-family='Playfair Display,Georgia,serif' font-weight='700'>Gold</text>
+</svg>

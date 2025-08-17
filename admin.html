@@ -1,0 +1,88 @@
+<!doctype html><html lang="th"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — NationNest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Prompt:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head><body>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="index.html"><img class="logo" src="assets/logo.svg" alt="NationNest"><h3 style="margin:0 0 0 6px;">NationNest <span style="color:var(--gold)">CROWN GOLD</span></h3></a>
+  <nav class="main-nav"><a class="pill" href="index.html#listings">กลับหน้าแรก</a><a class="pill" href="admin.html">Admin</a></nav>
+</div></header>
+
+<section class="section"><div class="container">
+  <h1>แผงควบคุม Admin</h1>
+  <div class="filters" style="margin:12px 0">
+    <label>โหมดสิทธิ์ <select id="roleSel"><option value="moderator">Moderator</option><option value="admin">Admin</option></select></label>
+    <button id="btnExport" class="pill">Export properties.json</button>
+    <label class="pill"><input type="file" id="importFile" accept=".json" hidden> Import JSON</label>
+  </div>
+  <div class="section-head"><h2>Pending</h2></div>
+  <table class="table" id="tblPending"><tr><th>รหัส</th><th>ชื่อ</th><th>จังหวัด</th><th>ประเภท</th><th>ราคา</th><th>แอคชั่น</th></tr></table>
+  <div class="section-head"><h2>Approved</h2></div>
+  <table class="table" id="tblApproved"><tr><th>รหัส</th><th>ชื่อ</th><th>จังหวัด</th><th>ประเภท</th><th>ราคา</th><th>แอคชั่น</th></tr></table>
+  <div class="section-head"><h2>Rejected</h2></div>
+  <table class="table" id="tblRejected"><tr><th>รหัส</th><th>ชื่อ</th><th>จังหวัด</th><th>ประเภท</th><th>ราคา</th><th>แอคชั่น</th></tr></table>
+</div></section>
+
+<footer class="footer"><div class="container">© <span id="year"></span> NationNest</div></footer>
+
+<script type="module">
+const fmt=(n)=> (typeof n==='number'? n.toLocaleString('th-TH',{style:'currency',currency:'THB',maximumFractionDigits:0}) : n);
+const el=(s,r=document)=>r.querySelector(s);
+const roleSel=el('#roleSel');
+let PROPS=[];
+const STATE=JSON.parse(localStorage.getItem('NN_STATE')||'{}');
+async function load(){
+  const base=await (await fetch('properties.json')).json();
+  const pending=STATE.pending||[]; const approved=STATE.approved||[]; const rejected=STATE.rejected||[];
+  const byId={}; base.forEach(p=>byId[p.id]=p); approved.forEach(p=>byId[p.id]=p); PROPS=Object.values(byId);
+  renderTables(pending,approved,rejected);
+}
+function row(p,actionsHtml){ return `<tr><td>${p.id}</td><td>${p.name}</td><td>${p.province}</td><td>${p.ptype}</td><td>${fmt(p.price)}</td><td>${actionsHtml}</td></tr>`; }
+function renderTables(pending,approved,rejected){
+  const P=el('#tblPending'), A=el('#tblApproved'), R=el('#tblRejected');
+  P.innerHTML='<tr><th>รหัส</th><th>ชื่อ</th><th>จังหวัด</th><th>ประเภท</th><th>ราคา</th><th>แอคชั่น</th></tr>'+ pending.map(p=>row(p,`<button data-id="${p.id}" data-act="approve">อนุมัติ</button> <button data-id="${p.id}" data-act="reject">ปฏิเสธ</button>`)).join('');
+  A.innerHTML='<tr><th>รหัส</th><th>ชื่อ</th><th>จังหวัด</th><th>ประเภท</th><th>ราคา</th><th>แอคชั่น</th></tr>'+ approved.map(p=>row(p,`<a class="pill" href="property.html?id=${p.id}">ดู</a> <button data-id="${p.id}" data-act="remove">ลบ</button>`)).join('');
+  R.innerHTML='<tr><th>รหัส</th><th>ชื่อ</th><th>จังหวัด</th><th>ประเภท</th><th>ราคา</th><th>แอคชั่น</th></tr>'+ rejected.map(p=>row(p,`<button data-id="${p.id}" data-act="restore">กู้คืน</button>`)).join('');
+  [P,A,R].forEach(tbl=>tbl.querySelectorAll('button').forEach(b=>b.onclick=onAction));
+}
+function onAction(e){
+  const id=e.target.dataset.id; const act=e.target.dataset.act; const role=roleSel.value;
+  const state=JSON.parse(localStorage.getItem('NN_STATE')||'{}');
+  ['pending','approved','rejected'].forEach(k=>state[k]=state[k]||[]);
+  const findAndRemove=(arr)=>{ const i=arr.findIndex(x=>x.id===id); return i>=0?arr.splice(i,1)[0]:null; };
+  if(act==='approve'){
+    const item=findAndRemove(state.pending) || null; if(!item) return;
+    if(role==='moderator'){ item._modApproved=true; state.pending.push(item); alert('Moderator อนุมัติเบื้องต้น ✓ (รอ Admin)'); }
+    else { item.status='approved'; item.approvedBy='admin'; state.approved.push(item); alert('Approved ✓'); }
+  }else if(act==='reject'){
+    const item=findAndRemove(state.pending) || null; if(item){ item.status='rejected'; state.rejected.push(item); alert('Rejected'); }
+  }else if(act==='restore'){
+    const item=findAndRemove(state.rejected) || null; if(item){ state.pending.push(item); }
+  }else if(act==='remove'){
+    const i=state.approved.findIndex(x=>x.id===id); if(i>=0){ state.approved.splice(i,1); alert('ลบจาก Approved แล้ว'); }
+  }
+  localStorage.setItem('NN_STATE',JSON.stringify(state)); load();
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('btnExport').onclick=async ()=>{
+  const base=await (await fetch('properties.json')).json();
+  const state=JSON.parse(localStorage.getItem('NN_STATE')||'{}');
+  const merged=[...base, ...(state.approved||[])].reduce((acc,p)=>{ acc[p.id]=p; return acc; },{});
+  const list=Object.values(merged);
+  const a=document.createElement('a');
+  a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(list,null,2));
+  a.download='properties.json';
+  a.click();
+};
+document.getElementById('importFile').addEventListener('change',async (e)=>{
+  const file=e.target.files[0]; if(!file) return;
+  const text=await file.text(); try{
+    const arr=JSON.parse(text);
+    const state=JSON.parse(localStorage.getItem('NN_STATE')||'{}');
+    state.approved=arr; localStorage.setItem('NN_STATE',JSON.stringify(state)); alert('Imported ✓'); load();
+  }catch{ alert('ไฟล์ไม่ถูกต้อง'); }
+});
+load();
+</script>
+</body></html>

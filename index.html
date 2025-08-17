@@ -1,0 +1,177 @@
+<!doctype html><html lang="th"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NationNest — CROWN GOLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Prompt:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body data-cloud-name="" data-upload-preset="" data-gmaps-key="" data-cloud-watermark="">
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="index.html"><img class="logo" src="assets/logo.svg" alt="NationNest"><h3 style="margin:0 0 0 6px;">NationNest <span style="color:var(--gold)">CROWN GOLD</span></h3></a>
+  <nav class="main-nav">
+    <a class="pill" href="#areas">ทำเล</a>
+    <a class="pill" href="#listings">ประกาศ</a>
+    <a class="pill" href="#calc">คำนวณ</a>
+    <a class="pill" href="about.html">เกี่ยวกับเรา</a>
+    <a class="pill" href="careers.html">สมัครงาน</a>
+    <a class="pill" href="admin.html">Admin</a>
+    <button id="btnOpenSubmit" class="pill primary">ฝากทรัพย์ฟรี</button>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="container">
+  <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center">
+    <div>
+      <h1>ซื้อ • ขาย • เช่า • ลงทุน — สวย เรียบ พรีเมียม</h1>
+      <p style="color:#4b5563">ธีมใหม่ CROWN GOLD — โทนอ่อนทอง + รอยัลบลู ฟอนต์ Playfair + Prompt</p>
+      <div class="pill-bar">
+        <span class="pill">ซื้อ</span><span class="pill">ขาย</span><span class="pill">เช่า</span><span class="pill">ลงทุน</span><span class="pill">ฝาก</span>
+      </div>
+      <form id="quickSearch" class="qsearch" onsubmit="return false;">
+        <select id="qsDeal"><option value="all">ซื้อ/เช่า</option><option value="sale">ซื้อ/ขาย</option><option value="rent">เช่า</option></select>
+        <input id="qsQ" placeholder="เช่น พระราม 9, อโศก, สาทร, บางนา-ตราด">
+        <select id="qsProvince"></select>
+        <select id="qsSubarea"><option value="all">ทำเลย่อย</option></select>
+        <input id="qsMax" type="number" placeholder="งบสูงสุด (บาท)">
+        <button id="btnQuick" class="pill primary">ค้นหา</button>
+      </form>
+      <div class="pill-bar" id="poiChips">
+        <span class="pill" data-poi="hospital">ใกล้โรงพยาบาล</span>
+        <span class="pill" data-poi="university">ใกล้มหาวิทยาลัย</span>
+        <span class="pill" data-poi="mall">ใกล้ห้าง</span>
+        <span class="pill" data-poi="park">ใกล้สวน</span>
+        <span class="pill" data-poi="sea">ใกล้ทะเล</span>
+      </div>
+    </div>
+    <div>
+      <a class="banner" href="#">พื้นที่โฆษณาหลัก 1200×300</a>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+        <a class="banner" href="#">แบนเนอร์ A</a>
+        <a class="banner" href="#">แบนเนอร์ B</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="types" class="section alt"><div class="container">
+  <h2>ประเภททรัพย์</h2>
+  <div id="catRow" class="scroll-x"></div>
+</div></section>
+
+<section id="areas" class="section"><div class="container">
+  <h2>ทำเลยอดนิยม</h2>
+  <div id="popularRow" class="cards scroll-x"></div>
+</div></section>
+
+<section id="sponsors" class="section alt"><div class="container">
+  <h2>สปอนเซอร์/โปรโมทโครงการ</h2>
+  <div class="sponsor-row">
+    <div class="sponsor">Developer A</div>
+    <div class="sponsor">Developer B</div>
+    <div class="sponsor">Mortgage Partner</div>
+    <div class="sponsor">Interior Studio</div>
+  </div>
+</div></section>
+
+<section id="listings" class="section"><div class="container">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap">
+    <h2>ประกาศล่าสุด <small id="resultCount" style="color:#64748b"></small></h2>
+    <div class="filters">
+      <select id="fDeal"><option value="all">ซื้อ/เช่า</option><option value="sale">ขาย</option><option value="rent">เช่า</option></select>
+      <select id="fType"><option value="all">ทุกประเภท</option></select>
+      <select id="province"><option value="all">ทุกจังหวัด</option></select>
+      <select id="subarea"><option value="all">ทำเลย่อย</option></select>
+      <select id="sortBy"><option value="recent">ล่าสุด</option><option value="priceAsc">ราคาน้อย→มาก</option><option value="priceDesc">ราคามาก→น้อย</option></select>
+      <select id="nearLine">
+        <option value="any">— ใกล้รถไฟฟ้า (เลือกสาย) —</option>
+        <option value="BTS_Sukhumvit">BTS สุขุมวิท</option>
+        <option value="BTS_Silom">BTS สีลม</option>
+        <option value="MRT_Blue">MRT น้ำเงิน</option>
+        <option value="MRT_Purple">MRT ม่วง</option>
+        <option value="MRT_Yellow">MRT เหลือง</option>
+        <option value="MRT_Pink">MRT ชมพู</option>
+        <option value="Airport_Link">Airport Link</option>
+        <option value="BRT">BRT</option>
+      </select>
+      <label>รัศมี (กม.) <input type="number" id="nearRadius" min="0" max="10" value="0" style="width:90px"></label>
+    </div>
+  </div>
+  <div class="layout">
+    <aside>
+      <div class="sidebox">
+        <div class="top">แผนที่</div>
+        <div id="gmapJS"></div>
+        <iframe id="gmapEmbed" class="map-iframe" loading="lazy"></iframe>
+      </div>
+      <div class="sidebox" style="margin-top:10px">
+        <div class="top">โฆษณา</div>
+        <a class="banner" href="#">300×250</a>
+        <a class="banner" href="#" style="margin-top:8px">300×600</a>
+      </div>
+    </aside>
+    <main>
+      <div class="searchbar"><input id="q" placeholder="ค้นหาทำเล/โครงการ/คุณสมบัติ"><button id="btnSearch" class="pill primary">ค้นหา</button></div>
+      <div id="cards" class="grid"></div><div id="noResults" hidden>ไม่พบรายการ</div>
+    </main>
+  </div>
+</div></section>
+
+<section id="calc" class="section"><div class="container">
+  <h2>เครื่องคิดเลขลงทุน</h2><p class="calc-note">โหลดเมื่อเลื่อนมาถึง (Lazy)</p>
+  <div id="calcGrid" class="grid">
+    <div class="card"><div class="card-body"><h3>Net Yield</h3><div data-calc="netyield">กำลังโหลด...</div></div></div>
+    <div class="card"><div class="card-body"><h3>ค่างวดผ่อน (PMT)</h3><div data-calc="pmt">กำลังโหลด...</div></div></div>
+    <div class="card"><div class="card-body"><h3>ค่าโอน/ภาษี (ประมาณ)</h3><div data-calc="transfer">กำลังโหลด...</div></div></div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="container" style="display:flex;justify-content:space-between;align-items:center">
+  <div>© <span id="year"></span> NationNest • CROWN GOLD</div>
+  <div>
+    <a class="pill" href="about.html">เกี่ยวกับเรา</a>
+    <a class="pill primary" href="careers.html">รับสมัครเอเจนต์</a>
+  </div>
+</div></footer>
+
+<!-- Province modal -->
+<dialog id="provinceModal"><form method="dialog" class="modal" id="provForm" style="padding:16px;background:#fff;border-radius:14px">
+  <h3>เลือกจังหวัด</h3>
+  <div id="provGrid" style="columns:4 260px;column-gap:12px"></div>
+  <div class="filters" style="margin-top:10px"><button class="pill primary">ปิด</button></div>
+</form></dialog>
+
+<!-- Submit property modal -->
+<dialog id="submitModal"><form method="dialog" class="modal" id="submitForm" style="padding:16px;background:#fff;border-radius:14px">
+  <h3>ฝากทรัพย์ฟรี</h3>
+  <div class="filters" style="margin:6px 0 12px 0">
+    <span class="badge">ขาย</span><span class="badge">เช่า</span><span class="badge">ลงทุน</span>
+  </div>
+  <div class="form-row">
+    <label>ชื่อประกาศ<input name="name" required></label>
+    <label>จังหวัด<select name="province" id="provincePost"></select></label>
+    <label>ทำเลย่อย<input name="district" placeholder="เช่น อโศก-ทองหล่อ, ป่าตอง"></label>
+    <label>ประเภท<select name="ptype"><option>คอนโด</option><option>บ้านเดี่ยว</option><option>ทาวน์โฮม</option><option>วิลล่า</option><option>บ้านแฝด</option><option>โฮมออฟฟิศ</option><option>ออฟฟิศ</option><option>ร้านค้า</option><option>โกดัง/โรงงาน</option><option>ที่ดิน</option><option>โรงแรม/เกสต์เฮาส์</option></select></label>
+    <label>ซื้อ/เช่า<select name="deal"><option value="sale">ขาย</option><option value="rent">เช่า</option></select></label>
+    <label>ราคา (บาท)<input type="number" name="price" required></label>
+    <label>ทำเล/ที่ตั้ง<input name="location" required></label>
+    <label>พื้นที่ (ตร.ม.)<input type="number" name="size"></label>
+    <label>ห้องนอน<input type="number" name="beds"></label>
+    <label>ห้องน้ำ<input type="number" name="baths"></label>
+    <label>ที่จอดรถ<input type="number" name="parking"></label>
+    <label>ชั้น/จำนวนชั้น<input name="floor" placeholder="เช่น ชั้น 21 / 30"></label>
+    <label>พิกัด (ละติจูด,ลองจิจูด)<input name="latlng" placeholder="13.7563,100.5018"></label>
+    <label>รถไฟฟ้า (คั่น ,)<input name="transit" placeholder="BTS สุขุมวิท, MRT น้ำเงิน"></label>
+    <label>คุณสมบัติ (คั่น ,)<input name="features" placeholder="เฟอร์ครบ, ห้องมุม, เลี้ยงสัตว์, ใกล้ห้าง"></label>
+    <label>รูปภาพ URL (คั่น ,)<input name="images" id="imageUrls" required></label>
+    <label>อัปโหลดรูป (Cloudinary)<input type="file" id="imageFiles" accept="image/*" multiple></label>
+  </div>
+  <div id="uploadMsg" class="calc-note"></div>
+  <button class="pill primary" type="submit">ส่งฝากทรัพย์</button>
+  <p id="submitMsg" class="calc-note"></p>
+</form></dialog>
+
+<script>window.TH_PROVINCES=["กระบี่", "กรุงเทพมหานคร", "กาญจนบุรี", "กาฬสินธุ์", "กำแพงเพชร", "ขอนแก่น", "จันทบุรี", "ฉะเชิงเทรา", "ชลบุรี", "ชัยนาท", "ชัยภูมิ", "ชุมพร", "เชียงราย", "เชียงใหม่", "ตรัง", "ตราด", "ตาก", "นครนายก", "นครปฐม", "นครพนม", "นครราชสีมา", "นครศรีธรรมราช", "นครสวรรค์", "นนทบุรี", "นราธิวาส", "น่าน", "บึงกาฬ", "บุรีรัมย์", "ปทุมธานี", "ประจวบคีรีขันธ์", "ปราจีนบุรี", "ปัตตานี", "พระนครศรีอยุธยา", "พะเยา", "พังงา", "พัทลุง", "พิจิตร", "พิษณุโลก", "ภูเก็ต", "มหาสารคาม", "มุกดาหาร", "แม่ฮ่องสอน", "ยโสธร", "ยะลา", "ร้อยเอ็ด", "ระนอง", "ระยอง", "ราชบุรี", "ลพบุรี", "ลำปาง", "ลำพูน", "ศรีสะเกษ", "สกลนคร", "สงขลา", "สตูล", "สมุทรปราการ", "สมุทรสงคราม", "สมุทรสาคร", "สระแก้ว", "สระบุรี", "สิงห์บุรี", "สุโขทัย", "สุพรรณบุรี", "สุราษฎร์ธานี", "สุรินทร์", "หนองคาย", "หนองบัวลำภู", "อ่างทอง", "อำนาจเจริญ", "อุดรธานี", "อุตรดิตถ์", "อุทัยธานี", "อุบลราชธานี"]; window.SUBAREAS={"กรุงเทพมหานคร": ["พระราม 9", "อโศก-ทองหล่อ", "รัชดา-ห้วยขวาง", "สาทร", "บางนา-ตราด", "ราชพฤกษ์", "เกษตร-นวมินทร์", "สุขุมวิทตอนต้น", "สุขุมวิทตอนปลาย"], "ภูเก็ต": ["ป่าตอง", "กะตะ", "กะรน", "ฉลอง", "วิชิต"], "ชลบุรี": ["พัทยาเหนือ", "พัทยากลาง", "พัทยาใต้", "นาเกลือ/วงศอมาตย์", "บางแสน", "ศรีราชา"], "เชียงใหม่": ["นิมมานฯ", "สันทราย", "หางดง", "สันกำแพง"]};</script>
+<script type="module" src="utils.js"></script>
+<script type="module" src="bts-full.js"></script>
+<script type="module" src="app.js"></script>
+<script type="module" src="lazy-calc-loader.js"></script>
+</body></html>

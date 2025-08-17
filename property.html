@@ -1,0 +1,56 @@
+<!doctype html><html lang="th"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>รายละเอียดทรัพย์ — NationNest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Prompt:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="index.html"><img class="logo" src="assets/logo.svg" alt="NationNest"><h3 style="margin:0 0 0 6px;">NationNest <span style="color:var(--gold)">CROWN GOLD</span></h3></a>
+  <nav class="main-nav"><a class="pill" href="index.html#listings">กลับรายการ</a></nav>
+</div></header>
+
+<section class="section"><div class="container" id="wrap"><h1>กำลังโหลด...</h1></div></section>
+
+<footer class="footer"><div class="container">© <span id="year"></span> NationNest</div></footer>
+
+<script type="module">
+import { el, fmt } from './utils.js';
+document.getElementById('year').textContent=new Date().getFullYear();
+const id=new URLSearchParams(location.search).get('id');
+const list=await (await fetch('properties.json')).json();
+const p=list.find(x=>x.id===id);
+const wrap=el('#wrap');
+if(!p){ wrap.innerHTML='<h1>ไม่พบรายการ</h1>'; } else {
+  const imgs=(p.images&&p.images.length?p.images:[p.image]).slice(0,8);
+  wrap.innerHTML = `<h1>${p.name}</h1>
+  <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:16px">
+    <div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        ${`<img class='gallery-main' id='gMain' src='${imgs[0]}'>` + `<div class='gallery-thumbs'>` + imgs.slice(1,6).map(u=>`<img src='${u}' data-thumb>`).join('') + `</div>`}
+      </div>
+      <h3 style="margin-top:12px">รายละเอียด</h3>
+      <table class="table">
+        <tr><th>ประเภท</th><td>${p.ptype}</td></tr>
+        <tr><th>สถานะ</th><td>${p.deal==='sale'?'ขาย':'เช่า'}</td></tr>
+        <tr><th>ราคา</th><td>${p.deal==='sale'?fmt(p.price):fmt(p.price)+'/เดือน'}</td></tr>
+        <tr><th>พื้นที่</th><td>${p.size||'-'} ตร.ม.</td></tr>
+        <tr><th>ห้องนอน/น้ำ/จอด</th><td>${p.beds||'-'} / ${p.baths||'-'} / ${p.parking||'-'}</td></tr>
+        <tr><th>ทำเล</th><td>${p.location||'-'} • ${p.district||''} • ${p.province||''}</td></tr>
+        <tr><th>รถไฟฟ้า</th><td>${(p.transit||[]).join(', ')||'-'}</td></tr>
+        <tr><th>คุณสมบัติ</th><td>${(p.features||[]).map(x=>'🏷️ '+x).join(' • ')||'-'}</td></tr>
+        <tr><th>รหัสทรัพย์</th><td>${p.id}</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="sidebox"><div class="top">แผนที่</div>
+        <iframe src="https://www.google.com/maps?q=${p.lat||''},${p.lng||''}&z=15&output=embed" class="map-iframe"></iframe>
+      </div>
+      <a class="pill primary" style="margin-top:12px;display:inline-flex" href="mailto:hello@nationnest.example?subject=สนใจทรัพย์ ${p.id}">สนใจทรัพย์นี้</a>
+    </div>
+  </div>`;
+}
+
+wrap.addEventListener('click',e=>{ const t=e.target; if(t.matches('[data-thumb]')){ document.getElementById('gMain').src=t.src; } });
+</script>
+</body></html>
